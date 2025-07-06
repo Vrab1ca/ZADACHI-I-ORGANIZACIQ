@@ -28,12 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "TaskDialog";
+            btnAddTask = new Button();
+            filterPanel = new FlowLayoutPanel();
+            cmbPriority = new ComboBox();
+            SuspendLayout();
+            // 
+            // btnAddTask
+            // 
+            btnAddTask.BackColor = Color.Coral;
+            btnAddTask.Dock = DockStyle.Top;
+            btnAddTask.Location = new Point(0, 0);
+            btnAddTask.Name = "btnAddTask";
+            btnAddTask.Size = new Size(800, 23);
+            btnAddTask.TabIndex = 0;
+            btnAddTask.Tag = "btnAddTask";
+            btnAddTask.Text = "Добави задача";
+            btnAddTask.UseVisualStyleBackColor = false;
+            // 
+            // filterPanel
+            // 
+            filterPanel.Dock = DockStyle.Top;
+            filterPanel.Location = new Point(0, 23);
+            filterPanel.Name = "filterPanel";
+            filterPanel.Size = new Size(800, 100);
+            filterPanel.TabIndex = 1;
+            // 
+            // cmbPriority
+            // 
+            cmbPriority.FormattingEnabled = true;
+            cmbPriority.Location = new Point(490, 182);
+            cmbPriority.Name = "cmbPriority";
+            cmbPriority.Size = new Size(121, 23);
+            cmbPriority.TabIndex = 2;
+            // 
+            // TaskDialog
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(cmbPriority);
+            Controls.Add(filterPanel);
+            Controls.Add(btnAddTask);
+            Name = "TaskDialog";
+            Text = "TaskDialog";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnAddTask;
+        private FlowLayoutPanel filterPanel;
+        private ComboBox cmbPriority;
     }
 }
