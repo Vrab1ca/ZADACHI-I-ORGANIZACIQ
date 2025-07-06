@@ -148,12 +148,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 203F));
-            tableLayoutPanel1.Controls.Add(dtpDue, 1, 1);
             tableLayoutPanel1.Controls.Add(txtTitle, 0, 0);
             tableLayoutPanel1.Controls.Add(txtDescr, 0, 1);
-            tableLayoutPanel1.Controls.Add(cmbPrio, 1, 2);
             tableLayoutPanel1.Controls.Add(btnColor, 2, 0);
             tableLayoutPanel1.Controls.Add(btnOK, 2, 1);
+            tableLayoutPanel1.Controls.Add(dtpDue, 1, 0);
+            tableLayoutPanel1.Controls.Add(cmbPrio, 1, 1);
             tableLayoutPanel1.Location = new Point(0, 179);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
@@ -185,7 +185,7 @@
             // 
             // dtpDue
             // 
-            dtpDue.Location = new Point(260, 149);
+            dtpDue.Location = new Point(260, 3);
             dtpDue.Name = "dtpDue";
             dtpDue.Size = new Size(212, 23);
             dtpDue.TabIndex = 2;
@@ -194,7 +194,7 @@
             // 
             cmbPrio.FormattingEnabled = true;
             cmbPrio.Items.AddRange(new object[] { "Low", " Medium", "High" });
-            cmbPrio.Location = new Point(260, 295);
+            cmbPrio.Location = new Point(260, 149);
             cmbPrio.Name = "cmbPrio";
             cmbPrio.Size = new Size(121, 23);
             cmbPrio.TabIndex = 3;
@@ -213,12 +213,14 @@
             // 
             // btnOK
             // 
+            btnOK.BackColor = Color.LightSteelBlue;
+            btnOK.DialogResult = DialogResult.OK;
             btnOK.Location = new Point(517, 149);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(75, 23);
             btnOK.TabIndex = 5;
-            btnOK.Text = "button1";
-            btnOK.UseVisualStyleBackColor = true;
+            btnOK.Text = "Запази";
+            btnOK.UseVisualStyleBackColor = false;
             // 
             // TaskDialog
             // 
