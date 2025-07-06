@@ -26,5 +26,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
 
         }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

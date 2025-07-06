@@ -42,7 +42,10 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtTitle = new TextBox();
             txtDescr = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDue = new DateTimePicker();
+            cmbPrio = new ComboBox();
+            btnColor = new Button();
+            btnOK = new Button();
             filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -54,7 +57,7 @@
             btnAddTask.Dock = DockStyle.Top;
             btnAddTask.Location = new Point(0, 0);
             btnAddTask.Name = "btnAddTask";
-            btnAddTask.Size = new Size(1221, 73);
+            btnAddTask.Size = new Size(1267, 73);
             btnAddTask.TabIndex = 0;
             btnAddTask.Tag = "btnAddTask";
             btnAddTask.Text = "Добави задача";
@@ -62,13 +65,13 @@
             // 
             // filterPanel
             // 
+            filterPanel.Controls.Add(cmbPriority);
             filterPanel.Controls.Add(chkShowPending);
             filterPanel.Controls.Add(chkShowCompleted);
-            filterPanel.Controls.Add(cmbPriority);
             filterPanel.Dock = DockStyle.Top;
             filterPanel.Location = new Point(0, 73);
             filterPanel.Name = "filterPanel";
-            filterPanel.Size = new Size(1221, 100);
+            filterPanel.Size = new Size(1267, 100);
             filterPanel.TabIndex = 1;
             // 
             // cmbPriority
@@ -76,7 +79,7 @@
             cmbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPriority.FormattingEnabled = true;
             cmbPriority.Items.AddRange(new object[] { "Всички ", "Нисък", "Среден", "Висок" });
-            cmbPriority.Location = new Point(280, 3);
+            cmbPriority.Location = new Point(3, 3);
             cmbPriority.Name = "cmbPriority";
             cmbPriority.Size = new Size(160, 23);
             cmbPriority.TabIndex = 2;
@@ -86,7 +89,7 @@
             chkShowPending.AutoSize = true;
             chkShowPending.BackColor = Color.Green;
             chkShowPending.CheckAlign = ContentAlignment.TopLeft;
-            chkShowPending.Location = new Point(3, 3);
+            chkShowPending.Location = new Point(169, 3);
             chkShowPending.Name = "chkShowPending";
             chkShowPending.Size = new Size(122, 19);
             chkShowPending.TabIndex = 3;
@@ -97,7 +100,7 @@
             // 
             chkShowCompleted.AutoSize = true;
             chkShowCompleted.BackColor = Color.FromArgb(0, 192, 192);
-            chkShowCompleted.Location = new Point(131, 3);
+            chkShowCompleted.Location = new Point(297, 3);
             chkShowCompleted.Name = "chkShowCompleted";
             chkShowCompleted.Size = new Size(143, 19);
             chkShowCompleted.TabIndex = 5;
@@ -108,7 +111,7 @@
             // 
             gridTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridTasks.Columns.AddRange(new DataGridViewColumn[] { Title, Description, Due, Priority, Done });
-            gridTasks.Location = new Point(677, 179);
+            gridTasks.Location = new Point(723, 179);
             gridTasks.Name = "gridTasks";
             gridTasks.Size = new Size(544, 373);
             gridTasks.TabIndex = 6;
@@ -144,17 +147,20 @@
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 88F));
-            tableLayoutPanel1.Controls.Add(txtDescr, 0, 1);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 203F));
+            tableLayoutPanel1.Controls.Add(dtpDue, 1, 1);
             tableLayoutPanel1.Controls.Add(txtTitle, 0, 0);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtDescr, 0, 1);
+            tableLayoutPanel1.Controls.Add(cmbPrio, 1, 2);
+            tableLayoutPanel1.Controls.Add(btnColor, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnOK, 2, 1);
             tableLayoutPanel1.Location = new Point(0, 179);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tableLayoutPanel1.Size = new Size(680, 373);
+            tableLayoutPanel1.Size = new Size(717, 373);
             tableLayoutPanel1.TabIndex = 7;
             // 
             // txtTitle
@@ -177,18 +183,48 @@
             txtDescr.Text = "Описание";
             txtDescr.TextChanged += txtDescr_TextChanged;
             // 
-            // dateTimePicker1
+            // dtpDue
             // 
-            dateTimePicker1.Location = new Point(299, 149);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(212, 23);
-            dateTimePicker1.TabIndex = 2;
+            dtpDue.Location = new Point(260, 149);
+            dtpDue.Name = "dtpDue";
+            dtpDue.Size = new Size(212, 23);
+            dtpDue.TabIndex = 2;
+            // 
+            // cmbPrio
+            // 
+            cmbPrio.FormattingEnabled = true;
+            cmbPrio.Items.AddRange(new object[] { "Low", " Medium", "High" });
+            cmbPrio.Location = new Point(260, 295);
+            cmbPrio.Name = "cmbPrio";
+            cmbPrio.Size = new Size(121, 23);
+            cmbPrio.TabIndex = 3;
+            cmbPrio.Text = "Приоритет";
+            // 
+            // btnColor
+            // 
+            btnColor.BackColor = Color.Aquamarine;
+            btnColor.Location = new Point(517, 3);
+            btnColor.Name = "btnColor";
+            btnColor.Size = new Size(75, 23);
+            btnColor.TabIndex = 4;
+            btnColor.Text = "Цвят";
+            btnColor.UseVisualStyleBackColor = false;
+            btnColor.Click += btnColor_Click;
+            // 
+            // btnOK
+            // 
+            btnOK.Location = new Point(517, 149);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(75, 23);
+            btnOK.TabIndex = 5;
+            btnOK.Text = "button1";
+            btnOK.UseVisualStyleBackColor = true;
             // 
             // TaskDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1221, 576);
+            ClientSize = new Size(1267, 624);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(gridTasks);
             Controls.Add(filterPanel);
@@ -219,6 +255,9 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTitle;
         private TextBox txtDescr;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDue;
+        private ComboBox cmbPrio;
+        private Button btnColor;
+        private Button btnOK;
     }
 }
