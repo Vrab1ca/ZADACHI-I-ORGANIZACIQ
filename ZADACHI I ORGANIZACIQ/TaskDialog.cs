@@ -21,5 +21,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
 
         }
+
+        private void txtDescr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,6 +42,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtTitle = new TextBox();
             txtDescr = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -52,7 +54,7 @@
             btnAddTask.Dock = DockStyle.Top;
             btnAddTask.Location = new Point(0, 0);
             btnAddTask.Name = "btnAddTask";
-            btnAddTask.Size = new Size(800, 73);
+            btnAddTask.Size = new Size(1221, 73);
             btnAddTask.TabIndex = 0;
             btnAddTask.Tag = "btnAddTask";
             btnAddTask.Text = "Добави задача";
@@ -60,10 +62,13 @@
             // 
             // filterPanel
             // 
+            filterPanel.Controls.Add(chkShowPending);
+            filterPanel.Controls.Add(chkShowCompleted);
+            filterPanel.Controls.Add(cmbPriority);
             filterPanel.Dock = DockStyle.Top;
             filterPanel.Location = new Point(0, 73);
             filterPanel.Name = "filterPanel";
-            filterPanel.Size = new Size(800, 100);
+            filterPanel.Size = new Size(1221, 100);
             filterPanel.TabIndex = 1;
             // 
             // cmbPriority
@@ -71,7 +76,7 @@
             cmbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPriority.FormattingEnabled = true;
             cmbPriority.Items.AddRange(new object[] { "Всички ", "Нисък", "Среден", "Висок" });
-            cmbPriority.Location = new Point(12, 142);
+            cmbPriority.Location = new Point(280, 3);
             cmbPriority.Name = "cmbPriority";
             cmbPriority.Size = new Size(160, 23);
             cmbPriority.TabIndex = 2;
@@ -81,7 +86,7 @@
             chkShowPending.AutoSize = true;
             chkShowPending.BackColor = Color.Green;
             chkShowPending.CheckAlign = ContentAlignment.TopLeft;
-            chkShowPending.Location = new Point(508, 129);
+            chkShowPending.Location = new Point(3, 3);
             chkShowPending.Name = "chkShowPending";
             chkShowPending.Size = new Size(122, 19);
             chkShowPending.TabIndex = 3;
@@ -92,7 +97,7 @@
             // 
             chkShowCompleted.AutoSize = true;
             chkShowCompleted.BackColor = Color.FromArgb(0, 192, 192);
-            chkShowCompleted.Location = new Point(636, 129);
+            chkShowCompleted.Location = new Point(131, 3);
             chkShowCompleted.Name = "chkShowCompleted";
             chkShowCompleted.Size = new Size(143, 19);
             chkShowCompleted.TabIndex = 5;
@@ -103,9 +108,9 @@
             // 
             gridTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridTasks.Columns.AddRange(new DataGridViewColumn[] { Title, Description, Due, Priority, Done });
-            gridTasks.Location = new Point(304, 179);
+            gridTasks.Location = new Point(677, 179);
             gridTasks.Name = "gridTasks";
-            gridTasks.Size = new Size(496, 250);
+            gridTasks.Size = new Size(544, 373);
             gridTasks.TabIndex = 6;
             gridTasks.CellContentClick += gridTasks_CellContentClick;
             // 
@@ -139,16 +144,17 @@
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 72F));
-            tableLayoutPanel1.Controls.Add(txtTitle, 0, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 88F));
             tableLayoutPanel1.Controls.Add(txtDescr, 0, 1);
-            tableLayoutPanel1.Location = new Point(0, 248);
+            tableLayoutPanel1.Controls.Add(txtTitle, 0, 0);
+            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
+            tableLayoutPanel1.Location = new Point(0, 179);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(306, 100);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tableLayoutPanel1.Size = new Size(680, 373);
             tableLayoutPanel1.TabIndex = 7;
             // 
             // txtTitle
@@ -162,32 +168,39 @@
             // 
             // txtDescr
             // 
-            txtDescr.Location = new Point(3, 43);
+            txtDescr.BackColor = Color.Coral;
+            txtDescr.Location = new Point(3, 149);
             txtDescr.Multiline = true;
             txtDescr.Name = "txtDescr";
             txtDescr.Size = new Size(100, 23);
             txtDescr.TabIndex = 1;
             txtDescr.Text = "Описание";
+            txtDescr.TextChanged += txtDescr_TextChanged;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(299, 149);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(212, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
             // TaskDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1221, 576);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(chkShowPending);
             Controls.Add(gridTasks);
-            Controls.Add(chkShowCompleted);
-            Controls.Add(cmbPriority);
             Controls.Add(filterPanel);
             Controls.Add(btnAddTask);
             Name = "TaskDialog";
             Text = "TaskDialog";
+            filterPanel.ResumeLayout(false);
+            filterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridTasks).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -206,5 +219,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTitle;
         private TextBox txtDescr;
+        private DateTimePicker dateTimePicker1;
     }
 }
