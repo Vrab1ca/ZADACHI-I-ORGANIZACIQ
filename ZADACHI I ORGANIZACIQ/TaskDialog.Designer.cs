@@ -46,6 +46,7 @@
             cmbPrio = new ComboBox();
             btnColor = new Button();
             btnOK = new Button();
+            btnCancel = new Button();
             filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -154,6 +155,7 @@
             tableLayoutPanel1.Controls.Add(btnOK, 2, 1);
             tableLayoutPanel1.Controls.Add(dtpDue, 1, 0);
             tableLayoutPanel1.Controls.Add(cmbPrio, 1, 1);
+            tableLayoutPanel1.Controls.Add(btnCancel, 2, 2);
             tableLayoutPanel1.Location = new Point(0, 179);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
@@ -222,6 +224,17 @@
             btnOK.Text = "Запази";
             btnOK.UseVisualStyleBackColor = false;
             // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.CadetBlue;
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Location = new Point(517, 295);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 6;
+            btnCancel.Text = "Отказ";
+            btnCancel.UseVisualStyleBackColor = false;
+            // 
             // TaskDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,5 +274,6 @@
         private ComboBox cmbPrio;
         private Button btnColor;
         private Button btnOK;
+        private Button btnCancel;
     }
 }
