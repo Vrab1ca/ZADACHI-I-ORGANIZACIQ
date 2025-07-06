@@ -16,5 +16,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
             InitializeComponent();
         }
+
+        private void gridTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
