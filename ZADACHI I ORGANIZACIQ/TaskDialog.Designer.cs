@@ -41,7 +41,7 @@
             Done = new DataGridViewCheckBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtTitle = new TextBox();
-            textBox1 = new TextBox();
+            txtDescr = new TextBox();
             ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -141,7 +141,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 72F));
             tableLayoutPanel1.Controls.Add(txtTitle, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
+            tableLayoutPanel1.Controls.Add(txtDescr, 0, 1);
             tableLayoutPanel1.Location = new Point(0, 248);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
@@ -160,13 +160,14 @@
             txtTitle.TabIndex = 0;
             txtTitle.Text = "Заглавие";
             // 
-            // textBox1
+            // txtDescr
             // 
-            textBox1.Location = new Point(3, 43);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            txtDescr.Location = new Point(3, 43);
+            txtDescr.Multiline = true;
+            txtDescr.Name = "txtDescr";
+            txtDescr.Size = new Size(100, 23);
+            txtDescr.TabIndex = 1;
+            txtDescr.Text = "Описание";
             // 
             // TaskDialog
             // 
@@ -204,6 +205,6 @@
         private DataGridViewCheckBoxColumn Done;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTitle;
-        private TextBox textBox1;
+        private TextBox txtDescr;
     }
 }
