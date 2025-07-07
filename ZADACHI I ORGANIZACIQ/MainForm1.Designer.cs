@@ -34,9 +34,9 @@
             chkShowPending = new CheckBox();
             chkShowComplete = new CheckBox();
             gridTasks = new DataGridView();
-            dataGridView1 = new DataGridView();
+            gridTasks1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridTasks1).BeginInit();
             SuspendLayout();
             // 
             // btnAddTask
@@ -109,20 +109,22 @@
             gridTasks.Size = new Size(800, 297);
             gridTasks.TabIndex = 5;
             // 
-            // dataGridView1
+            // gridTasks1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 153);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(348, 297);
-            dataGridView1.TabIndex = 6;
+            gridTasks1.AllowUserToAddRows = false;
+            gridTasks1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridTasks1.Location = new Point(0, 153);
+            gridTasks1.Name = "gridTasks1";
+            gridTasks1.ReadOnly = true;
+            gridTasks1.Size = new Size(348, 297);
+            gridTasks1.TabIndex = 6;
             // 
             // MainForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(gridTasks1);
             Controls.Add(gridTasks);
             Controls.Add(chkShowComplete);
             Controls.Add(chkShowPending);
@@ -132,7 +134,7 @@
             Name = "MainForm1";
             Text = "MainForm1";
             ((System.ComponentModel.ISupportInitialize)gridTasks).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridTasks1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,6 +147,6 @@
         private CheckBox chkShowPending;
         private CheckBox chkShowComplete;
         private DataGridView gridTasks;
-        private DataGridView dataGridView1;
+        private DataGridView gridTasks1;
     }
 }

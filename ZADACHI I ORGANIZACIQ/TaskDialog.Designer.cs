@@ -33,22 +33,15 @@
             cmbPriority = new ComboBox();
             chkShowPending = new CheckBox();
             chkShowCompleted = new CheckBox();
-            gridTasks = new DataGridView();
-            Title = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            Due = new DataGridViewTextBoxColumn();
-            Priority = new DataGridViewTextBoxColumn();
-            Done = new DataGridViewCheckBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtTitle = new TextBox();
             txtDescr = new TextBox();
-            dtpDue = new DateTimePicker();
-            cmbPrio = new ComboBox();
             btnColor = new Button();
             btnOK = new Button();
+            dtpDue = new DateTimePicker();
+            cmbPrio = new ComboBox();
             btnCancel = new Button();
             filterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -108,41 +101,6 @@
             chkShowCompleted.Text = "Показвай завършени";
             chkShowCompleted.UseVisualStyleBackColor = false;
             // 
-            // gridTasks
-            // 
-            gridTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridTasks.Columns.AddRange(new DataGridViewColumn[] { Title, Description, Due, Priority, Done });
-            gridTasks.Location = new Point(723, 179);
-            gridTasks.Name = "gridTasks";
-            gridTasks.Size = new Size(544, 373);
-            gridTasks.TabIndex = 6;
-            gridTasks.CellContentClick += gridTasks_CellContentClick;
-            // 
-            // Title
-            // 
-            Title.HeaderText = "DataPropertyName Title";
-            Title.Name = "Title";
-            // 
-            // Description
-            // 
-            Description.HeaderText = "Description";
-            Description.Name = "Description";
-            // 
-            // Due
-            // 
-            Due.HeaderText = "DueDate\n\n";
-            Due.Name = "Due";
-            // 
-            // Priority
-            // 
-            Priority.HeaderText = "Priority";
-            Priority.Name = "Priority";
-            // 
-            // Done
-            // 
-            Done.HeaderText = "IsCompleted ";
-            Done.Name = "Done";
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
@@ -185,23 +143,6 @@
             txtDescr.Text = "Описание";
             txtDescr.TextChanged += txtDescr_TextChanged;
             // 
-            // dtpDue
-            // 
-            dtpDue.Location = new Point(260, 3);
-            dtpDue.Name = "dtpDue";
-            dtpDue.Size = new Size(212, 23);
-            dtpDue.TabIndex = 2;
-            // 
-            // cmbPrio
-            // 
-            cmbPrio.FormattingEnabled = true;
-            cmbPrio.Items.AddRange(new object[] { "Low", " Medium", "High" });
-            cmbPrio.Location = new Point(260, 149);
-            cmbPrio.Name = "cmbPrio";
-            cmbPrio.Size = new Size(121, 23);
-            cmbPrio.TabIndex = 3;
-            cmbPrio.Text = "Приоритет";
-            // 
             // btnColor
             // 
             btnColor.BackColor = Color.Aquamarine;
@@ -224,6 +165,23 @@
             btnOK.Text = "Запази";
             btnOK.UseVisualStyleBackColor = false;
             // 
+            // dtpDue
+            // 
+            dtpDue.Location = new Point(260, 3);
+            dtpDue.Name = "dtpDue";
+            dtpDue.Size = new Size(212, 23);
+            dtpDue.TabIndex = 2;
+            // 
+            // cmbPrio
+            // 
+            cmbPrio.FormattingEnabled = true;
+            cmbPrio.Items.AddRange(new object[] { "Low", " Medium", "High" });
+            cmbPrio.Location = new Point(260, 149);
+            cmbPrio.Name = "cmbPrio";
+            cmbPrio.Size = new Size(121, 23);
+            cmbPrio.TabIndex = 3;
+            cmbPrio.Text = "Приоритет";
+            // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.CadetBlue;
@@ -241,14 +199,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1267, 624);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(gridTasks);
             Controls.Add(filterPanel);
             Controls.Add(btnAddTask);
             Name = "TaskDialog";
             Text = "TaskDialog";
             filterPanel.ResumeLayout(false);
             filterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gridTasks).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -261,12 +217,6 @@
         private ComboBox cmbPriority;
         private CheckBox chkShowPending;
         private CheckBox chkShowCompleted;
-        private DataGridView gridTasks;
-        private DataGridViewTextBoxColumn Title;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn Due;
-        private DataGridViewTextBoxColumn Priority;
-        private DataGridViewCheckBoxColumn Done;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTitle;
         private TextBox txtDescr;
