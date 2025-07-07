@@ -1,40 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ZADACHI_I_ORGANIZACIQ
+namespace TaskTracker
 {
     public partial class TaskDialog : Form
     {
+        public Task Task { get; } = new();
         public TaskDialog()
         {
             InitializeComponent();
+            InitLogic();
         }
 
-        private void gridTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void InitLogic()
         {
+            cmbPrio.Items.AddRange(Enum.GetNames(typeof(Priority)));
+            cmbPrio.SelectedIndex = 1; // Medium
 
-        }
+            btnColor.Click += (_, __) =>
+            {
+                using var cd = new ColorDialog();
+                if (cd.ShowDialog() == DialogResult.OK)
+                {
+                    btnColor.BackColor = cd.Color;
+                    Task.ColorHtml = cd.Color.ToArgb().ToString();
+                }
+            };
 
-        private void txtDescr_TextChanged(object sender, EventArgs e)
-        {
+            btnOK.Click += (_, __) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                {
+                    MessageBox.Show("Заглавието е задължително!", "Грешка",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult = DialogResult.None;
+                    return;
+                }
 
-        }
-
-        private void btnColor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbPrio_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+                Task.Title = txtTitle.Text.Trim();
+                Task.Description = txtDescr.Text.Trim();
+                Task.DueDate = dtpDue.Value.Date;
+                Task.Priority = Enum.Parse<Priority>(cmbPrio.SelectedItem!.ToString()!);
+            };
         }
     }
 }

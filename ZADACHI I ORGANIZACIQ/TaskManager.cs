@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-
 namespace TaskTracker
 {
     public class TaskManager
@@ -14,7 +13,10 @@ namespace TaskTracker
         public void Load()
         {
             if (File.Exists(StorageFile))
-                Tasks = JsonSerializer.Deserialize<List<Task>>(File.ReadAllText(StorageFile)) ?? new();
+            {
+                var json = File.ReadAllText(StorageFile);
+                Tasks = JsonSerializer.Deserialize<List<Task>>(json) ?? new();
+            }
         }
 
         public void Save() =>

@@ -11,9 +11,9 @@ namespace TaskTracker
             var mgr = new TaskManager();
             mgr.Load();
 
-            ApplicationConfiguration.Initialize();               
-            Application.ApplicationExit += (_, __) => mgr.Save(); 
-            Application.Run(new MainForm(mgr));                   
+            ApplicationConfiguration.Initialize(); // .NET 6+ WinForms boot
+            Application.ApplicationExit += (_, __) => mgr.Save();
+            Application.Run(new MainForm1(mgr));
         }
     }
 }

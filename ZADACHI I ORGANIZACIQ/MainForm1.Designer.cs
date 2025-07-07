@@ -32,7 +32,7 @@
             filterPanel = new FlowLayoutPanel();
             cmbPriority = new ComboBox();
             chkShowPending = new CheckBox();
-            chkShowComplete = new CheckBox();
+            chkShowCompleted = new CheckBox();
             gridTasks = new DataGridView();
             gridTasks1 = new DataGridView();
             colDesc = new DataGridViewTextBoxColumn();
@@ -89,19 +89,19 @@
             chkShowPending.Text = "Показвай текущи";
             chkShowPending.UseVisualStyleBackColor = false;
             // 
-            // chkShowComplete
+            // chkShowCompleted
             // 
-            chkShowComplete.AutoSize = true;
-            chkShowComplete.BackColor = Color.FromArgb(192, 0, 0);
-            chkShowComplete.Checked = true;
-            chkShowComplete.CheckState = CheckState.Checked;
-            chkShowComplete.Location = new Point(302, 78);
-            chkShowComplete.Name = "chkShowComplete";
-            chkShowComplete.Size = new Size(143, 19);
-            chkShowComplete.TabIndex = 4;
-            chkShowComplete.Text = "Показвай завършени";
-            chkShowComplete.UseVisualStyleBackColor = false;
-            chkShowComplete.CheckedChanged += chkShowComplete_CheckedChanged;
+            chkShowCompleted.AutoSize = true;
+            chkShowCompleted.BackColor = Color.FromArgb(192, 0, 0);
+            chkShowCompleted.Checked = true;
+            chkShowCompleted.CheckState = CheckState.Checked;
+            chkShowCompleted.Location = new Point(302, 78);
+            chkShowCompleted.Name = "chkShowCompleted";
+            chkShowCompleted.Size = new Size(143, 19);
+            chkShowCompleted.TabIndex = 4;
+            chkShowCompleted.Text = "Показвай завършени";
+            chkShowCompleted.UseVisualStyleBackColor = false;
+            chkShowCompleted.CheckedChanged += chkShowComplete_CheckedChanged;
             // 
             // gridTasks
             // 
@@ -163,7 +163,7 @@
             ClientSize = new Size(1005, 554);
             Controls.Add(gridTasks1);
             Controls.Add(gridTasks);
-            Controls.Add(chkShowComplete);
+            Controls.Add(chkShowCompleted);
             Controls.Add(chkShowPending);
             Controls.Add(cmbPriority);
             Controls.Add(filterPanel);
@@ -182,7 +182,7 @@
         private FlowLayoutPanel filterPanel;
         private ComboBox cmbPriority;
         private CheckBox chkShowPending;
-        private CheckBox chkShowComplete;
+        private CheckBox chkShowCompleted;
         private DataGridView gridTasks;
         private DataGridView gridTasks1;
         private DataGridViewTextBoxColumn colDesc;
