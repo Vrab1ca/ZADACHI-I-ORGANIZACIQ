@@ -16,5 +16,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
             InitializeComponent();
         }
+
+        private void cmbPriority_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
