@@ -34,6 +34,12 @@
             txtDescr = new TextBox();
             label3 = new Label();
             dtpDue = new DateTimePicker();
+            label4 = new Label();
+            cmbPrio = new ComboBox();
+            label5 = new Label();
+            btnColor = new Button();
+            btnOK = new Button();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // label1
@@ -91,18 +97,93 @@
             dtpDue.Size = new Size(200, 23);
             dtpDue.TabIndex = 5;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.YellowGreen;
+            label4.Location = new Point(557, 197);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Приоритет:";
+            // 
+            // cmbPrio
+            // 
+            cmbPrio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPrio.FormattingEnabled = true;
+            cmbPrio.Items.AddRange(new object[] { "Нисък", "Среден", "Висок" });
+            cmbPrio.Location = new Point(531, 225);
+            cmbPrio.Name = "cmbPrio";
+            cmbPrio.Size = new Size(121, 23);
+            cmbPrio.TabIndex = 7;
+            cmbPrio.SelectedIndexChanged += cmbPrio_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.ActiveCaption;
+            label5.ForeColor = Color.Purple;
+            label5.Location = new Point(575, 261);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Цвят:";
+            // 
+            // btnColor
+            // 
+            btnColor.BackColor = Color.MediumOrchid;
+            btnColor.ForeColor = Color.Teal;
+            btnColor.Location = new Point(557, 293);
+            btnColor.Name = "btnColor";
+            btnColor.Size = new Size(75, 23);
+            btnColor.TabIndex = 9;
+            btnColor.Text = "Цвят…";
+            btnColor.UseVisualStyleBackColor = false;
+            // 
+            // btnOK
+            // 
+            btnOK.BackColor = Color.DarkBlue;
+            btnOK.DialogResult = DialogResult.OK;
+            btnOK.ForeColor = SystemColors.ActiveCaption;
+            btnOK.Location = new Point(557, 322);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(75, 23);
+            btnOK.TabIndex = 10;
+            btnOK.Text = "Запази";
+            btnOK.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.Coral;
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.ForeColor = Color.Khaki;
+            btnCancel.Location = new Point(558, 354);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 11;
+            btnCancel.Text = "Отказ";
+            btnCancel.UseVisualStyleBackColor = false;
+            // 
             // TaskDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1267, 624);
+            Controls.Add(btnCancel);
+            Controls.Add(btnOK);
+            Controls.Add(btnColor);
+            Controls.Add(label5);
+            Controls.Add(cmbPrio);
+            Controls.Add(label4);
             Controls.Add(dtpDue);
             Controls.Add(label3);
             Controls.Add(txtDescr);
             Controls.Add(label2);
             Controls.Add(txtTitle);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "TaskDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TaskDialog";
             ResumeLayout(false);
             PerformLayout();
@@ -116,5 +197,11 @@
         private TextBox txtDescr;
         private Label label3;
         private DateTimePicker dtpDue;
+        private Label label4;
+        private ComboBox cmbPrio;
+        private Label label5;
+        private Button btnColor;
+        private Button btnOK;
+        private Button btnCancel;
     }
 }

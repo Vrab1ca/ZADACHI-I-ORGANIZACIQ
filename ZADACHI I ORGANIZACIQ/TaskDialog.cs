@@ -31,5 +31,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
 
         }
+
+        private void cmbPrio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
