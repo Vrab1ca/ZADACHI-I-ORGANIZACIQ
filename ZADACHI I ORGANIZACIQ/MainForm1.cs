@@ -21,5 +21,10 @@ namespace ZADACHI_I_ORGANIZACIQ
         {
 
         }
+
+        private void chkShowComplete_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
