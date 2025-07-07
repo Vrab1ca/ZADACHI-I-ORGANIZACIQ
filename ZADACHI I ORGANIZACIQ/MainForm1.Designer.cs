@@ -95,7 +95,7 @@
             chkShowComplete.BackColor = Color.FromArgb(192, 0, 0);
             chkShowComplete.Checked = true;
             chkShowComplete.CheckState = CheckState.Checked;
-            chkShowComplete.Location = new Point(302, 102);
+            chkShowComplete.Location = new Point(302, 78);
             chkShowComplete.Name = "chkShowComplete";
             chkShowComplete.Size = new Size(143, 19);
             chkShowComplete.TabIndex = 4;
