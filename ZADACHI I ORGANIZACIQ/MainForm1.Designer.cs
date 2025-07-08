@@ -1,6 +1,6 @@
 ﻿namespace ZADACHI_I_ORGANIZACIQ
 {
-    partial class MainForm1
+    partial class MainForm1 : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -40,8 +40,8 @@
             colPrio = new DataGridViewTextBoxColumn();
             colDone = new DataGridViewCheckBoxColumn();
             colTitle = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)gridTasks).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridTasks1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(gridTasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(gridTasks1)).BeginInit();
             SuspendLayout();
             // 
             // btnAddTask
@@ -170,8 +170,8 @@
             Controls.Add(btnAddTask);
             Name = "MainForm1";
             Text = "MainForm1";
-            ((System.ComponentModel.ISupportInitialize)gridTasks).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridTasks1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(gridTasks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(gridTasks1)).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -190,5 +190,15 @@
         private DataGridViewTextBoxColumn colPrio;
         private DataGridViewCheckBoxColumn colDone;
         private DataGridViewTextBoxColumn colTitle;
+
+        private void cmbPriority_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Placeholder: Add logic for handling priority change
+        }
+
+        private void chkShowComplete_CheckedChanged(object sender, EventArgs e)
+        {
+            // Placeholder: Add logic for handling completed tasks visibility
+        }
     }
 }
