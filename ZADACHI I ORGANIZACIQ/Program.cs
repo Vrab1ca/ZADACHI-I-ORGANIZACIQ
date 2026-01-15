@@ -1,17 +1,19 @@
-namespace ZADACHI_I_ORGANIZACIQ
+﻿using System.Windows.Forms;
+using ZADACHI_I_ORGANIZACIQ;
+
+namespace TaskTracker
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var mgr = new TaskManager();
+            mgr.Load();
+
+            ApplicationConfiguration.Initialize(); // .NET 6+ WinForms boot
+            Application.ApplicationExit += (_, __) => mgr.Save();
+            Application.Run(new MainForm1(mgr));
         }
     }
 }
